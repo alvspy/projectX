@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="ru">
+<!DOCTYPE php>
+<php lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -166,56 +166,56 @@
         <h1 class="title">Классы</h1>
         
         <!-- Описание -->
-        <p class="description">Made by Lion, Kebab, Imp and Field</p>
+        <p class="description">Made by <a href="https://t.me/alvspy">Lion</a>, <a href="https://t.me/fuckingshitagain">Kebab</a>, <a href="https://t.me/MiniBesss">Imp</a> and <a href="https://t.me/t0hrepus">Field</a></p>
         
         <!-- Контейнер для строк классов -->
         <div class="classes-rows">
             <!-- 7-е классы -->
             <div class="class-row">
                 <div class="row-title">7-е классы</div>
-                <button class="button" onclick="window.location.href='class-7i.html'">7И</button>
-                <button class="button" onclick="window.location.href='class-7b.html'">7Б</button>
+                <button class="button" onclick="window.location.href='class-7i.php'">7И</button>
+                <button class="button" onclick="window.location.href='class-7b.php'">7Б</button>
             </div>
 
             <!-- 8-е классы -->
             <div class="class-row">
                 <div class="row-title">8-е классы</div>
-                <button class="button" onclick="window.location.href='class-8i.html'">8И</button>
-                <button class="button" onclick="window.location.href='class-8b.html'">8Б</button>
-                <button class="button" onclick="window.location.href='class-8k.html'">8К</button>
-                <button class="button" onclick="window.location.href='class-8l.html'">8Л</button>
+                <button class="button" onclick="window.location.href='class-8i.php'">8И</button>
+                <button class="button" onclick="window.location.href='class-8b.php'">8Б</button>
+                <button class="button" onclick="window.location.href='class-8k.php'">8К</button>
+                <button class="button" onclick="window.location.href='class-8l.php'">8Л</button>
             </div>
 
             <!-- 9-е классы -->
             <div class="class-row">
                 <div class="row-title">9-е классы</div>
-                <button class="button" onclick="window.location.href='class-9i.html'">9И</button>
-                <button class="button" onclick="window.location.href='class-9b.html'">9Б</button>
-                <button class="button" onclick="window.location.href='class-9v.html'">9В</button>
-                <button class="button" onclick="window.location.href='class-9d.html'">9Д</button>
+                <button class="button" onclick="window.location.href='class-9i.php'">9И</button>
+                <button class="button" onclick="window.location.href='class-9b.php'">9Б</button>
+                <button class="button" onclick="window.location.href='class-9v.php'">9В</button>
+                <button class="button" onclick="window.location.href='class-9d.php'">9Д</button>
             </div>
 
             <!-- 10-е классы -->
             <div class="class-row">
                 <div class="row-title">10-е классы</div>
-                <button class="button" onclick="window.location.href='class-10i.html'">10И</button>
-                <button class="button" onclick="window.location.href='class-10b.html'">10Б</button>
-                <button class="button" onclick="window.location.href='class-10v.html'">10В</button>
-                <button class="button" onclick="window.location.href='class-10d.html'">10Д</button>
+                <button class="button" onclick="window.location.href='class-10i.php'">10И</button>
+                <button class="button" onclick="window.location.href='class-10b.php'">10Б</button>
+                <button class="button" onclick="window.location.href='10V.php'">10В</button>
+                <button class="button" onclick="window.location.href='class-10d.php'">10Д</button>
             </div>
 
             <!-- 11-е классы -->
             <div class="class-row">
                 <div class="row-title">11-е классы</div>
-                <button class="button" onclick="window.location.href='class-11i.html'">11И</button>
-                <button class="button" onclick="window.location.href='class-11b.html'">11Б</button>
-                <button class="button" onclick="window.location.href='class-11v.html'">11В</button>
-                <button class="button" onclick="window.location.href='class-11d.html'">11Д</button>
+                <button class="button" onclick="window.location.href='class-11i.php'">11И</button>
+                <button class="button" onclick="window.location.href='class-11b.php'">11Б</button>
+                <button class="button" onclick="window.location.href='class-11v.php'">11В</button>
+                <button class="button" onclick="window.location.href='class-11d.php'">11Д</button>
             </div>
         </div>
 
         <!-- Кнопка назад -->
-        <button class="button back-button" onclick="window.location.href='index.html'">← Назад</button>
+        <button class="button back-button" onclick="window.location.href='index.php'">← Назад</button>
     </div>
 </body>
-</html>
+</php>

@@ -2,8 +2,8 @@
 require 'config.php';
 ?>
 
-<!DOCTYPE html>
-<html lang="ru">
+<!DOCTYPE php>
+<php lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -178,34 +178,15 @@ require 'config.php';
             gap: 15px;
             justify-content: center; /* Центрируем карточки по горизонтали */
             width: 100%;
-
         }
 
         /* Карточка учителя */
-                
-        /* Add this - container for all teacher cards */
-        
-        .teachers-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center; /* or space-between, space-around */
-        }
-
         .teacher-card {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
             gap: 8px;
-            flex: 0 0 30%; /* Don't grow or shrink */
-            width: 200px; /* Fixed width for each card */
-        }
-
-        .teacher-card img {
-            max-width: 200px;
-            height: auto;
-            border-radius: 8px;
+            flex: 0 0 auto; /* Не растягивается и не сжимается */
         }
 
         /* Заголовок раздела */
@@ -219,6 +200,7 @@ require 'config.php';
         }
 
         /* Контейнер для учителей в разделе - ИЗМЕНЕНО ДЛЯ ЦЕНТРИРОВАНИЯ */
+        
 
         /* Место для фотографии */
         .teacher-photo {
@@ -317,7 +299,7 @@ require 'config.php';
         <h1 class="title">Учителя</h1>
         
         <!-- Описание -->
-        <p class="description">Made by Lion, Kebab, Imp and Field</p>
+        <p class="description">Made by <a href="https://t.me/alvspy">Lion</a>, <a href="https://t.me/fuckingshitagain">Kebab</a>, <a href="https://t.me/MiniBesss">Imp</a> and <a href="https://t.me/t0hrepus">Field</a></p>
         
         <!-- Секция директора -->
         <div class="director-section">
@@ -326,7 +308,7 @@ require 'config.php';
                 <div class="director-photo" style="background-image: url('https://via.placeholder.com/150')">
                     <div class="photo-placeholder" style="display: none;">Фото директора</div>
                 </div>
-                <button class="director-button" onclick="window.location.href='director.html'">Директор</button>
+                <button class="director-button" onclick="window.location.href='director.php'">Директор</button>
             </div>
         </div>
         <!-- Контейнер для разделов -->
@@ -353,7 +335,7 @@ require 'config.php';
                             <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
                                 <div class="photo-placeholder" style="display: none;">Фото</div>
                             </div>
-                            <button class="teacher-button" onclick="window.location.href='teacher-math2.html'">
+                            <button class="teacher-button" onclick="window.location.href='teacher-math2.php'">
                             <?php echo $teacher["Name"] . ' ' . $teacher["Surname"]; ?>
                         </button>
                         </div>
@@ -362,41 +344,19 @@ require 'config.php';
                     ?>
                 </div>
             </div>
+
             <!-- Физика и астрономия -->
             <div class="section">
                 <div class="section-title">Физика и астрономия</div>
                 <div class="teachers-container">
                     <!-- 5 карточек учителей -->
                     <div class="teacher-card">
-                        <div class="teacher-photo" style="background-image: url(https://stihi.ru/photos/nshat.jpg)">
+                        <div class="teacher-photo" style="background-image: url(https://via.placeholder.com/100)">
                             <div class="photo-placeholder" style="display: none;">Фото</div>
                         </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-physics1.html'">Шатовская Н.Е.</button>
+                        <button class="teacher-button" onclick="window.location.href='teacher-physics1.php'">Учитель 1</button>
                     </div>
-                    <div class="teacher-card">
-                        <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
-                            <div class="photo-placeholder" style="display: none;">Фото</div>
-                        </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-physics2.html'">Учитель 2</button>
-                    </div>
-                    <div class="teacher-card">
-                        <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
-                            <div class="photo-placeholder" style="display: none;">Фото</div>
-                        </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-physics3.html'">Учитель 3</button>
-                    </div>
-                    <div class="teacher-card">
-                        <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
-                            <div class="photo-placeholder" style="display: none;">Фото</div>
-                        </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-physics4.html'">Учитель 4</button>
-                    </div>
-                    <div class="teacher-card">
-                        <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
-                            <div class="photo-placeholder" style="display: none;">Фото</div>
-                        </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-physics5.html'">Учитель 5</button>
-                    </div>
+                    
                 </div>
             </div>
 
@@ -409,31 +369,7 @@ require 'config.php';
                         <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
                             <div class="photo-placeholder" style="display: none;">Фото</div>
                         </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-info1.html'">Учитель 1</button>
-                    </div>
-                    <div class="teacher-card">
-                        <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
-                            <div class="photo-placeholder" style="display: none;">Фото</div>
-                        </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-info2.html'">Учитель 2</button>
-                    </div>
-                    <div class="teacher-card">
-                        <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
-                            <div class="photo-placeholder" style="display: none;">Фото</div>
-                        </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-info3.html'">Учитель 3</button>
-                    </div>
-                    <div class="teacher-card">
-                        <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
-                            <div class="photo-placeholder" style="display: none;">Фото</div>
-                        </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-info4.html'">Учитель 4</button>
-                    </div>
-                    <div class="teacher-card">
-                        <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
-                            <div class="photo-placeholder" style="display: none;">Фото</div>
-                        </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-info5.html'">Учитель 5</button>
+                        <button class="teacher-button" onclick="window.location.href='teacher-info1.php'">Учитель 1</button>
                     </div>
                 </div>
             </div>
@@ -447,31 +383,7 @@ require 'config.php';
                         <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
                             <div class="photo-placeholder" style="display: none;">Фото</div>
                         </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-russian1.html'">Учитель 1</button>
-                    </div>
-                    <div class="teacher-card">
-                        <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
-                            <div class="photo-placeholder" style="display: none;">Фото</div>
-                        </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-russian2.html'">Учитель 2</button>
-                    </div>
-                    <div class="teacher-card">
-                        <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
-                            <div class="photo-placeholder" style="display: none;">Фото</div>
-                        </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-russian3.html'">Учитель 3</button>
-                    </div>
-                    <div class="teacher-card">
-                        <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
-                            <div class="photo-placeholder" style="display: none;">Фото</div>
-                        </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-russian4.html'">Учитель 4</button>
-                    </div>
-                    <div class="teacher-card">
-                        <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
-                            <div class="photo-placeholder" style="display: none;">Фото</div>
-                        </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-russian5.html'">Учитель 5</button>
+                        <button class="teacher-button" onclick="window.location.href='teacher-russian1.php'">Учитель 1</button>
                     </div>
                 </div>
             </div>
@@ -485,31 +397,7 @@ require 'config.php';
                         <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
                             <div class="photo-placeholder" style="display: none;">Фото</div>
                         </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-english1.html'">Учитель 1</button>
-                    </div>
-                    <div class="teacher-card">
-                        <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
-                            <div class="photo-placeholder" style="display: none;">Фото</div>
-                        </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-english2.html'">Учитель 2</button>
-                    </div>
-                    <div class="teacher-card">
-                        <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
-                            <div class="photo-placeholder" style="display: none;">Фото</div>
-                        </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-english3.html'">Учитель 3</button>
-                    </div>
-                    <div class="teacher-card">
-                        <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
-                            <div class="photo-placeholder" style="display: none;">Фото</div>
-                        </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-english4.html'">Учитель 4</button>
-                    </div>
-                    <div class="teacher-card">
-                        <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
-                            <div class="photo-placeholder" style="display: none;">Фото</div>
-                        </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-english5.html'">Учитель 5</button>
+                        <button class="teacher-button" onclick="window.location.href='teacher-english1.php'">Учитель 1</button>
                     </div>
                 </div>
             </div>
@@ -523,31 +411,7 @@ require 'config.php';
                         <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
                             <div class="photo-placeholder" style="display: none;">Фото</div>
                         </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-history1.html'">Учитель 1</button>
-                    </div>
-                    <div class="teacher-card">
-                        <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
-                            <div class="photo-placeholder" style="display: none;">Фото</div>
-                        </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-history2.html'">Учитель 2</button>
-                    </div>
-                    <div class="teacher-card">
-                        <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
-                            <div class="photo-placeholder" style="display: none;">Фото</div>
-                        </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-history3.html'">Учитель 3</button>
-                    </div>
-                    <div class="teacher-card">
-                        <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
-                            <div class="photo-placeholder" style="display: none;">Фото</div>
-                        </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-history4.html'">Учитель 4</button>
-                    </div>
-                    <div class="teacher-card">
-                        <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
-                            <div class="photo-placeholder" style="display: none;">Фото</div>
-                        </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-history5.html'">Учитель 5</button>
+                        <button class="teacher-button" onclick="window.location.href='teacher-history1.php'">Учитель 1</button>
                     </div>
                 </div>
             </div>
@@ -561,31 +425,7 @@ require 'config.php';
                         <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
                             <div class="photo-placeholder" style="display: none;">Фото</div>
                         </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-geography1.html'">Учитель 1</button>
-                    </div>
-                    <div class="teacher-card">
-                        <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
-                            <div class="photo-placeholder" style="display: none;">Фото</div>
-                        </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-geography2.html'">Учитель 2</button>
-                    </div>
-                    <div class="teacher-card">
-                        <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
-                            <div class="photo-placeholder" style="display: none;">Фото</div>
-                        </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-geography3.html'">Учитель 3</button>
-                    </div>
-                    <div class="teacher-card">
-                        <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
-                            <div class="photo-placeholder" style="display: none;">Фото</div>
-                        </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-geography4.html'">Учитель 4</button>
-                    </div>
-                    <div class="teacher-card">
-                        <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
-                            <div class="photo-placeholder" style="display: none;">Фото</div>
-                        </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-geography5.html'">Учитель 5</button>
+                        <button class="teacher-button" onclick="window.location.href='teacher-geography1.php'">Учитель 1</button>
                     </div>
                 </div>
             </div>
@@ -599,31 +439,7 @@ require 'config.php';
                         <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
                             <div class="photo-placeholder" style="display: none;">Фото</div>
                         </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-pe1.html'">Учитель 1</button>
-                    </div>
-                    <div class="teacher-card">
-                        <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
-                            <div class="photo-placeholder" style="display: none;">Фото</div>
-                        </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-pe2.html'">Учитель 2</button>
-                    </div>
-                    <div class="teacher-card">
-                        <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
-                            <div class="photo-placeholder" style="display: none;">Фото</div>
-                        </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-pe3.html'">Учитель 3</button>
-                    </div>
-                    <div class="teacher-card">
-                        <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
-                            <div class="photo-placeholder" style="display: none;">Фото</div>
-                        </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-pe4.html'">Учитель 4</button>
-                    </div>
-                    <div class="teacher-card">
-                        <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
-                            <div class="photo-placeholder" style="display: none;">Фото</div>
-                        </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-pe5.html'">Учитель 5</button>
+                        <button class="teacher-button" onclick="window.location.href='teacher-pe1.php'">Учитель 1</button>
                     </div>
                 </div>
             </div>
@@ -637,31 +453,7 @@ require 'config.php';
                         <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
                             <div class="photo-placeholder" style="display: none;">Фото</div>
                         </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-dance1.html'">Учитель 1</button>
-                    </div>
-                    <div class="teacher-card">
-                        <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
-                            <div class="photo-placeholder" style="display: none;">Фото</div>
-                        </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-dance2.html'">Учитель 2</button>
-                    </div>
-                    <div class="teacher-card">
-                        <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
-                            <div class="photo-placeholder" style="display: none;">Фото</div>
-                        </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-dance3.html'">Учитель 3</button>
-                    </div>
-                    <div class="teacher-card">
-                        <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
-                            <div class="photo-placeholder" style="display: none;">Фото</div>
-                        </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-dance4.html'">Учитель 4</button>
-                    </div>
-                    <div class="teacher-card">
-                        <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
-                            <div class="photo-placeholder" style="display: none;">Фото</div>
-                        </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-dance5.html'">Учитель 5</button>
+                        <button class="teacher-button" onclick="window.location.href='teacher-dance1.php'">Учитель 1</button>
                     </div>
                 </div>
             </div>
@@ -675,31 +467,7 @@ require 'config.php';
                         <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
                             <div class="photo-placeholder" style="display: none;">Фото</div>
                         </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-biology1.html'">Учитель 1</button>
-                    </div>
-                    <div class="teacher-card">
-                        <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
-                            <div class="photo-placeholder" style="display: none;">Фото</div>
-                        </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-biology2.html'">Учитель 2</button>
-                    </div>
-                    <div class="teacher-card">
-                        <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
-                            <div class="photo-placeholder" style="display: none;">Фото</div>
-                        </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-biology3.html'">Учитель 3</button>
-                    </div>
-                    <div class="teacher-card">
-                        <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
-                            <div class="photo-placeholder" style="display: none;">Фото</div>
-                        </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-biology4.html'">Учитель 4</button>
-                    </div>
-                    <div class="teacher-card">
-                        <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
-                            <div class="photo-placeholder" style="display: none;">Фото</div>
-                        </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-biology5.html'">Учитель 5</button>
+                        <button class="teacher-button" onclick="window.location.href='teacher-biology1.php'">Учитель 1</button>
                     </div>
                 </div>
             </div>
@@ -713,38 +481,15 @@ require 'config.php';
                         <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
                             <div class="photo-placeholder" style="display: none;">Фото</div>
                         </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-chemistry1.html'">Учитель 1</button>
-                    </div>
-                    <div class="teacher-card">
-                        <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
-                            <div class="photo-placeholder" style="display: none;">Фото</div>
-                        </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-chemistry2.html'">Учитель 2</button>
-                    </div>
-                    <div class="teacher-card">
-                        <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
-                            <div class="photo-placeholder" style="display: none;">Фото</div>
-                        </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-chemistry3.html'">Учитель 3</button>
-                    </div>
-                    <div class="teacher-card">
-                        <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
-                            <div class="photo-placeholder" style="display: none;">Фото</div>
-                        </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-chemistry4.html'">Учитель 4</button>
-                    </div>
-                    <div class="teacher-card">
-                        <div class="teacher-photo" style="background-image: url('https://via.placeholder.com/100')">
-                            <div class="photo-placeholder" style="display: none;">Фото</div>
-                        </div>
-                        <button class="teacher-button" onclick="window.location.href='teacher-chemistry5.html'">Учитель 5</button>
+                        <button class="teacher-button" onclick="window.location.href='teacher-chemistry1.php'">Учитель 1</button>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Кнопка назад -->
-        <button class="teacher-button back-button" onclick="window.location.href='index.html'">← Назад</button>
+        <button class="teacher-button back-button" onclick="window.location.href='index.php'">← Назад</button>
     </div>
 </body>
-</html>
+
+</php>

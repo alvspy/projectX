@@ -1,9 +1,10 @@
 import sqlite3
 import students
 from config import data_base
+from config import days
 
 
-def throw_error(error='undefined error'):
+def throw_error(error="undefined error"):
     print(f"\033[31m{error}\033[0m")
 
 
@@ -28,7 +29,7 @@ def del_cls(letter, number, cls_id):
         throw_error("no such class")
         return
     stud_list = students.stud_ids_split(result[0][0])
-    for id_stud in stud_list:
+    for id_stud, name, surname, second_name in stud_list:
         students.del_stud(id_stud=id_stud)
     cursor.execute("DELETE FROM Classes WHERE id = ?", (cls_id,))
     connection.commit()
@@ -51,12 +52,27 @@ def init_cls(letter=None, number=None):
             throw_error("this class already exists")
             return
 
-    cursor.execute('SELECT number_of_cls FROM Parameters')
+    cursor.execute("SELECT number_of_cls FROM Parameters")
     result = cursor.fetchall()
     cls_id = result[0][0]
-    cursor.execute('UPDATE Parameters SET number_of_cls = ? WHERE number_of_cls = ?', (cls_id + 1, cls_id,))
-    cursor.execute('INSERT INTO CLasses (id, number, letter, stud_list) VALUES  (?, ?, ?, ?)',
-                   (cls_id, number, letter, ""))
+    cursor.execute(
+        "UPDATE Parameters SET number_of_cls = ? WHERE number_of_cls = ?",
+        (
+            cls_id + 1,
+            cls_id,
+        ),
+    )
+    cursor.execute(
+        "INSERT INTO CLasses (id, number, letter, stud_list) VALUES  (?, ?, ?, ?)",
+        (cls_id, number, letter, ""),
+    )
+
+    for day in days:
+        cursor.execute(
+            f"INSERT INTO {day} (cls, cls_id, l1, l2, l3, l4, l5, l6, l7, t1, t2, t3, t4, t5, t6, t7) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+            (str(number) + letter, cls_id, "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-"),
+        )
+
     connection.commit()
 
 
@@ -65,5 +81,5 @@ def show_all_classes():
     cursor = connection.cursor()
     cursor.execute("SELECT * FROM Classes")
     result = cursor.fetchall()
-    for stud in result:
-        print(stud)
+    for cls1 in result:
+        print(cls1)

@@ -2,7 +2,7 @@ import sqlite3
 from config import data_base
 
 
-def throw_error(error='undefined error'):
+def throw_error(error="undefined error"):
     print(f"\033[31m{error}\033[0m")
 
 
@@ -45,22 +45,36 @@ def init_stud(name=None, surname=None, second_name="", cls=None):
     id_stud = cursor.fetchall()[0][0]
     cursor.execute("UPDATE Parameters SET number_of_stud = ?", (id_stud + 1,))
 
-    cursor.execute("INSERT INTO Students (id, name, surname, second_name, cls_id, cls_str) VALUES (?, ?, ?, ?, ?, ?)",
-                   (id_stud, name, surname, second_name, cls_id, str(number) + letter))
+    cursor.execute(
+        "INSERT INTO Students (id, name, surname, second_name, cls_id, cls_str) VALUES (?, ?, ?, ?, ?, ?)",
+        (id_stud, name, surname, second_name, cls_id, str(number) + letter),
+    )
     cursor.execute("SELECT stud_list FROM Classes WHERE id = ?", (cls_id,))
     result = cursor.fetchall()[0][0]
-    result += f"#{str(id_stud)}#"
-    cursor.execute("UPDATE Classes SET stud_list = ? WHERE id = ?", (result, cls_id,))
+    result += f"#{str(id_stud)} {name} {surname} {second_name}#"
+    cursor.execute(
+        "UPDATE Classes SET stud_list = ? WHERE id = ?",
+        (
+            result,
+            cls_id,
+        ),
+    )
     connection.commit()
 
 
-def del_from_cls(id_stud, cls_id):
+def del_from_cls(id_stud, cls_id, name, surname, second_name):
     connection = sqlite3.connect(data_base)
     cursor = connection.cursor()
     cursor.execute("SELECT stud_list FROM Classes WHERE id = ?", (cls_id,))
     result = cursor.fetchall()[0][0]
-    result = result.replace(f"#{id_stud}#", "")
-    cursor.execute("UPDATE Classes SET stud_list = ? WHERE id = ?", (result, cls_id,))
+    result = result.replace(f"#{id_stud} {name} {surname} {second_name}#", "")
+    cursor.execute(
+        "UPDATE Classes SET stud_list = ? WHERE id = ?",
+        (
+            result,
+            cls_id,
+        ),
+    )
     connection.commit()
 
 
@@ -69,27 +83,32 @@ def del_stud(cls=None, name=None, surname=None, second_name=None, id_stud=None):
     cursor = connection.cursor()
     result = []
     if id_stud is not None:
-        cursor.execute("SELECT FROM Students WHERE id = ?", (id_stud,))
+        cursor.execute("SELECT * FROM Students WHERE id = ?", (id_stud,))
         result = cursor.fetchall()
     elif surname is not None:
-        cursor.execute("SELECT FROM Students WHERE surname = ?", (surname,))
+        cursor.execute("SELECT * FROM Students WHERE surname = ?", (surname,))
         result = cursor.fetchall()
     elif name is not None:
-        cursor.execute("SELECT FROM Students WHERE name = ?", (name,))
+        cursor.execute("SELECT * FROM Students WHERE name = ?", (name,))
         result = cursor.fetchall()
     elif second_name is not None:
-        cursor.execute("SELECT FROM Students WHERE second_name = ?", (second_name,))
+        cursor.execute("SELECT * FROM Students WHERE second_name = ?", (second_name,))
         result = cursor.fetchall()
     elif cls is not None:
         if type(cls) == str:
-            cursor.execute("SELECT FROM Students WHERE cls_str = ?", (cls,))
+            cursor.execute("SELECT * FROM Students WHERE cls_str = ?", (cls,))
         elif type(cls) == int:
-            cursor.execute("SELECT FROM Students WHERE cls_id = ?", (cls,))
+            cursor.execute("SELECT * FROM Students WHERE cls_id = ?", (cls,))
         result = cursor.fetchall()
 
-    for id, name1, second_name1, cls_str1, cls_id1 in result:
-        if (cls is None or (cls == cls_str1 or cls == cls_id1)) and (
-                second_name is None or second_name1 == second_name) and (name1 == name or name is None):
+    id_stud = None
+    for id, name1, surname1, second_name1, cls_str1, cls_id1 in result:
+        if (
+            (cls is None or (cls == cls_str1 or cls == cls_id1))
+            and (second_name is None or second_name1 == second_name)
+            and (surname is None or surname1 == surname)
+            and (name1 == name or name is None)
+        ):
             if id_stud is not None:
                 throw_error("too little information, not one student")
                 return
@@ -97,27 +116,26 @@ def del_stud(cls=None, name=None, surname=None, second_name=None, id_stud=None):
     if id_stud is None:
         throw_error("no student like this")
         return
-    cursor.execute("SELECT cls_id FROM Students WHERE id=?", (id_stud,))
+    cursor.execute(
+        "SELECT cls_id, name, surname, second_name FROM Students WHERE id=?", (id_stud,)
+    )
     result = cursor.fetchall()
     if result is None:
         throw_error("no id like this")
         return
-    cls_id = result[0][0]
-    del_from_cls(id_stud, cls_id)
+    cls_id, name, surname, second_name = result[0]
+    del_from_cls(id_stud, cls_id, name, surname, second_name)
     cursor.execute("DELETE FROM Students WHERE id=?", (id_stud,))
     connection.commit()
 
 
 def stud_ids_split(st):
+    ans1 = []
+    st = st[1:-1]
+    ans1 = st.split("##")
     ans = []
-    now = ""
-    for i in st:
-        if i == "#":
-            if len(now) > 0:
-                ans.append(int(now))
-            now = ""
-        else:
-            now += i
+    for x in ans1:
+        ans.append(x.split())
     return ans
 
 
