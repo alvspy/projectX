@@ -1,5 +1,5 @@
-<!DOCTYPE php>
-<php lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,16 +11,14 @@
             margin: 0 auto;
             padding: 20px;
             background-color: #f8f9fa;
-            /* Фоновая картинка */
-            background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/%D0%A8%D0%BA%D0%BE%D0%BB%D0%B0_179_%D0%9C%D0%98%D0%9E%D0%9E%2C_%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0.jpg/1200px-%D0%A8%D0%BA%D0%BE%D0%BB%D0%B0_179_%D0%9C%D0%98%D0%9E%D0%9E%2C_%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0.jpg); /* Замените на путь к вашей картинке */
-            background-size: cover; /* Растягивает на весь экран */
-            background-position: center; /* Центрирует */
-            background-repeat: no-repeat; /* Не повторяет */
-            background-attachment: fixed; /* Фиксирует при скролле */
-            position: relative; /* Нужно для псевдоэлемента */
+            background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/%D0%A8%D0%BA%D0%BE%D0%BB%D0%B0_179_%D0%9C%D0%98%D0%9E%D0%9E%2C_%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0.jpg/1200px-%D0%A8%D0%BA%D0%BE%D0%BB%D0%B0_179_%D0%9C%D0%98%D0%9E%D0%9E%2C_%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            position: relative;
         }
 
-        /* Затемняющий слой поверх фона */
         body::before {
             content: '';
             position: fixed;
@@ -28,32 +26,22 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(248, 249, 250, 0.7); /* Цвет и прозрачность */
-            z-index: -1; /* Под всем контентом */
+            background-color: rgba(248, 249, 250, 0.7);
+            z-index: -1;
         }
+
         :root {
-            /* Заголовок */
             --title-size: 36px;
             --title-color: #2c3e50;
             
-            /* Описание */
             --description-size: 18px;
-            --description-color:  #596162;
+            --description-color: #596162;
             
-            /* Кнопки */
             --button-size: 16px;
             --button-color: rgb(52, 152, 219);
             --button-text-color: white;
             --button-width: 120px;
             --button-height: 45px;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f8f9fa;
         }
 
         .container {
@@ -63,7 +51,6 @@
             gap: 20px;
         }
 
-        /* Стили для заголовка */
         .title {
             font-size: var(--title-size);
             color: var(--title-color);
@@ -72,7 +59,6 @@
             font-weight: bold;
         }
 
-        /* Стили для описания */
         .description {
             font-size: var(--description-size);
             color: var(--description-color);
@@ -81,7 +67,6 @@
             line-height: 1.5;
         }
 
-        /* Общие стили для кнопок */
         .button {
             border: none;
             border-radius: 8px;
@@ -104,7 +89,6 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
 
-        /* Контейнер для строк классов */
         .classes-rows {
             display: flex;
             flex-direction: column;
@@ -114,7 +98,6 @@
             max-width: 500px;
         }
 
-        /* Строка с кнопками */
         .class-row {
             display: flex;
             justify-content: center;
@@ -123,7 +106,6 @@
             width: 100%;
         }
 
-        /* Заголовок строки */
         .row-title {
             font-size: 20px;
             color: #2c3e50;
@@ -133,7 +115,6 @@
             width: 100%;
         }
 
-        /* Кнопка назад */
         .back-button {
             background-color: #596162;
             width: 150px;
@@ -146,7 +127,6 @@
             background-color: #7f8c8d;
         }
 
-        /* Адаптивность для мобильных */
         @media (max-width: 600px) {
             .class-row {
                 gap: 10px;
@@ -162,22 +142,16 @@
 </head>
 <body>
     <div class="container">
-        <!-- Заголовок -->
         <h1 class="title">Классы</h1>
-        
-        <!-- Описание -->
         <p class="description">Made by <a href="https://t.me/alvspy">Lion</a>, <a href="https://t.me/fuckingshitagain">Kebab</a>, <a href="https://t.me/MiniBesss">Imp</a> and <a href="https://t.me/t0hrepus">Field</a></p>
         
-        <!-- Контейнер для строк классов -->
         <div class="classes-rows">
-            <!-- 7-е классы -->
             <div class="class-row">
                 <div class="row-title">7-е классы</div>
                 <button class="button" onclick="window.location.href='class-7i.php'">7И</button>
                 <button class="button" onclick="window.location.href='class-7b.php'">7Б</button>
             </div>
 
-            <!-- 8-е классы -->
             <div class="class-row">
                 <div class="row-title">8-е классы</div>
                 <button class="button" onclick="window.location.href='class-8i.php'">8И</button>
@@ -186,7 +160,6 @@
                 <button class="button" onclick="window.location.href='class-8l.php'">8Л</button>
             </div>
 
-            <!-- 9-е классы -->
             <div class="class-row">
                 <div class="row-title">9-е классы</div>
                 <button class="button" onclick="window.location.href='class-9i.php'">9И</button>
@@ -195,7 +168,6 @@
                 <button class="button" onclick="window.location.href='class-9d.php'">9Д</button>
             </div>
 
-            <!-- 10-е классы -->
             <div class="class-row">
                 <div class="row-title">10-е классы</div>
                 <button class="button" onclick="window.location.href='class-10i.php'">10И</button>
@@ -204,7 +176,6 @@
                 <button class="button" onclick="window.location.href='class-10d.php'">10Д</button>
             </div>
 
-            <!-- 11-е классы -->
             <div class="class-row">
                 <div class="row-title">11-е классы</div>
                 <button class="button" onclick="window.location.href='class-11i.php'">11И</button>
@@ -214,8 +185,7 @@
             </div>
         </div>
 
-        <!-- Кнопка назад -->
         <button class="button back-button" onclick="window.location.href='index.php'">← Назад</button>
     </div>
 </body>
-</php>
+</html>
