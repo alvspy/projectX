@@ -1,5 +1,5 @@
-<!DOCTYPE php>
-<php lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -48,7 +48,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 15px; 
+            gap: 15px;
         }
 
         .top-back-button {
@@ -67,7 +67,7 @@
             color: white;
             width: 100px;
             height: 35px;
-            margin-bottom: 5px; 
+            margin-bottom: 5px;
         }
 
         .top-back-button:hover {
@@ -107,7 +107,6 @@
             max-width: 900px;
         }
 
-        /* Адаптивность */
         @media (max-width: 768px) {
             .sections-container {
                 grid-template-columns: 1fr;
@@ -153,7 +152,6 @@
         <h1 class="title">10В класс</h1>
         <p class="description">Made by <a href="https://t.me/alvspy">Lion</a>, <a href="https://t.me/fuckingshitagain">Kebab</a>, <a href="https://t.me/MiniBesss">Imp</a> and <a href="https://t.me/t0hrepus">Field</a></p>
         <p class="description">Информация об учениках и учителях класса</p>
-        
     </div>
 </body>
-</php>
+</html>
